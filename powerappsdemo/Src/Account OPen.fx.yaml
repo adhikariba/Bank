@@ -1,0 +1,210 @@
+"'Account OPen' As screen":
+
+    dropdown_member As dropdown:
+        Items: =select_member
+        OnChange: =ClearCollect(memeber_detail, getmemeberbyid.Run(dropdown_member.Selected.member_id));
+        Width: =238
+        X: =522
+        Y: =207
+        ZIndex: =1
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =179
+        Items: =memeber_detail
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: |+
+            =UpdateContext({member_fullName:ThisItem.member_fullname});
+            UpdateContext({email:ThisItem.email});
+            
+            ClearCollect(memeber_detail, getmemeberbyid.Run(TextInput_member.Text));
+            
+            
+            
+            
+        TemplatePadding: =0
+        TemplateSize: =116
+        Width: =593
+        Y: =589
+        ZIndex: =1
+
+        Title7 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.member_id
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =43
+            Y: =23
+            ZIndex: =1
+
+        Subtitle6 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.email
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title7.Width
+            X: =Title7.X
+            Y: =Title7.Y + Title7.Height
+            ZIndex: =2
+
+        Body2 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.member_fullname
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title7.Width
+            X: =Title7.X
+            Y: =Subtitle6.Y + Subtitle6.Height
+            ZIndex: =3
+
+        NextArrow8 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator8 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle8 As rectangle:
+            Height: =Parent.TemplateHeight - Separator8.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    dropdown_account As dropdown:
+        Items: =select_accoutType
+        X: =62
+        Y: =207
+        ZIndex: =2
+
+    Button5 As button:
+        OnSelect: =accountopen.Run(dropdown_member.Selected.member_id,dropdown_account.Selected.Account_id);
+        Text: ="Create  account"
+        Width: =328
+        X: =31
+        Y: =334
+        ZIndex: =3
+
+    DataTable2 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =79
+        Items: =memeber_detail
+        Width: =800
+        X: =70
+        Y: =456
+        ZIndex: =6
+
+        member_id_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="member_id"
+            FieldName: ="member_id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.member_id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        member_fullname_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="member_fullname"
+            FieldName: ="member_fullname"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.member_fullname
+            Width: =100
+            X: =536
+            Y: =0
+            ZIndex: =2
+
+        email_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="email"
+            FieldName: ="email"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.email
+            Width: =100
+            X: =536
+            Y: =0
+            ZIndex: =3
+
+    TextInput_member As text:
+        Default: ="Text input"
+        Format: =TextFormat.Number
+        OnChange: =ClearCollect(memeber_detail, getmemeberbyid.Run(TextInput_member.Text));
+        X: =70
+        Y: =139
+        ZIndex: =7
+
+    Button5_1 As button:
+        OnSelect: =accountopen.Run(TextInput_member.Text,dropdown_account.Selected.Account_id);
+        Text: ="Create  account from textinput"
+        Width: =328
+        X: =485
+        Y: =334
+        ZIndex: =8
+
+    Label_id As label:
+        FontWeight: =FontWeight.Bold
+        Text: =member_fullName
+        Width: =218
+        X: =943
+        Y: =511
+        ZIndex: =9
+
+    Label7 As label:
+        Text: =email
+        Width: =172
+        X: =940
+        Y: =589
+        ZIndex: =10
+
+    TextInput2 As text:
+        Default: =member_fullName
+        X: =892
+        Y: =658
+        ZIndex: =11
+

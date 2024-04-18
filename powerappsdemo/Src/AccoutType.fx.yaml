@@ -1,0 +1,273 @@
+AccoutType As screen:
+    Fill: =RGBA(237, 237, 237, 1)
+    OnVisible: |+
+        =UpdateContext({accout_id : 0 });
+        UpdateContext({accout_Type : ""});
+        ClearCollect(select_accoutType ,seldectAccoutType.Run());
+        
+
+    Container3_5 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =87
+        Width: =1365
+        ZIndex: =1
+
+        Label1_5 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            DisplayMode: =DisplayMode.View
+            Height: =45
+            Size: =25
+            Text: ="AccoutType"
+            Width: =265
+            X: =555
+            Y: =5
+            ZIndex: =1
+
+        user_8 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: =Today()
+            Width: =300
+            X: =1012
+            Y: =44
+            ZIndex: =2
+
+    "Gallery_selectMeber_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =488
+        Items: =select_accoutType
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: |+
+            =UpdateContext({accout_id:ThisItem.Account_id});
+            UpdateContext({accout_Type:ThisItem.Account_Type});
+            
+            
+        TemplatePadding: =0
+        TemplateSize: =90
+        Y: =121
+        ZIndex: =1
+
+        Title4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Account_id
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle4.Size * 1.8)) / 2
+            ZIndex: =1
+
+        Subtitle4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Account_Type
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title4.Width
+            X: =Title4.X
+            Y: =Title4.Y + Title4.Height
+            ZIndex: =2
+
+        NextArrow4 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Navigate(MemberDetail , Transition.None,{accout_id: ThisItem.Account_id});
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =3
+
+        Separator4 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle4 As rectangle:
+            Height: =Parent.TemplateHeight - Separator4.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =5
+
+    user_9 As label:
+        Align: =Align.Right
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Text: =Concatenate("Welcome","  "  , User().FullName)
+        Width: =300
+        X: =1015
+        ZIndex: =8
+
+    TextInput_Accout_id_1 As text:
+        Default: =accout_id
+        Format: =TextFormat.Number
+        Height: =47
+        Width: =423
+        X: =820
+        Y: =181
+        ZIndex: =11
+
+    TextInput_accout_Type As text:
+        Default: =accout_Type
+        Height: =38
+        Width: =423
+        X: =820
+        Y: =248
+        ZIndex: =12
+
+    Button_ADD_Update_AccutType As button:
+        Fill: =RGBA(54, 176, 75, 1)
+        OnSelect: |-
+            =AddUpdateAccountType.Run(TextInput_Accout_id_1.Text,TextInput_accout_Type.Text);
+            ClearCollect(select_accoutType ,seldectAccoutType.Run());
+            Notify("Record is Updated ",NotificationType.Information);
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Text: ="ADD/Update"
+        Width: =149
+        X: =820
+        Y: =345
+        ZIndex: =14
+
+    Button_Reset_1 As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        OnSelect: |-
+            =UpdateContext({accout_id : 0 });
+            UpdateContext({accout_Type : ""});
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Text: ="Reset"
+        Width: =122
+        X: =1135
+        Y: =345
+        ZIndex: =15
+
+    Button_Delete_1 As button:
+        Fill: =RGBA(221, 79, 14, 1)
+        OnSelect: = Set(varshowpupupforaccout, true);
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Text: ="Delete"
+        Width: =123
+        X: =993
+        Y: =345
+        ZIndex: =16
+
+    Icon13 As icon.Reload:
+        Height: =58
+        Icon: =Icon.Reload
+        OnSelect: =ClearCollect(select_accoutType ,seldectAccoutType.Run());
+        Width: =38
+        X: =1327
+        Y: =14
+        ZIndex: =19
+
+    Icon1 As icon.Home:
+        Height: =49
+        Icon: =Icon.Home
+        OnSelect: =Navigate(HOME)
+        Width: =54
+        Y: =8
+        ZIndex: =26
+
+    Group_accout_type As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        Rectangle10 As rectangle:
+            Fill: =RGBA(56, 96, 178, .5)
+            Height: =687
+            Visible: =varshowpupupforaccout
+            Width: =1366
+            Y: =81
+            ZIndex: =20
+
+        Rectangle11 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =340
+            Visible: =varshowpupupforaccout
+            Width: =737
+            X: =410
+            Y: =254
+            ZIndex: =21
+
+        Label6 As label:
+            Align: =Align.Center
+            Fill: =RGBA(238, 204, 204, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =57
+            Size: =22
+            Text: ="DeleteRecord"
+            Visible: =varshowpupupforaccout
+            Width: =737
+            X: =410
+            Y: =254
+            ZIndex: =22
+
+        Label8 As label:
+            Align: =Align.Center
+            Color: =RGBA(221, 79, 14, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =61
+            Size: =20
+            Text: ="Are you sure you want to delete this recod ?"
+            Visible: =varshowpupupforaccout
+            Width: =737
+            X: =410
+            Y: =374
+            ZIndex: =23
+
+        Button11 As button:
+            Fill: =RGBA(127, 178, 57, 1)
+            OnSelect: =Set(varshowpupupforaccout,false);
+            Text: ="Cancle"
+            Visible: =varshowpupupforaccout
+            X: =790
+            Y: =478
+            ZIndex: =24
+
+        Button12 As button:
+            Fill: =RGBA(203, 102, 102, 1)
+            OnSelect: |
+                =If(accout_id > 0,    deleteAccoutType.Run(accout_id));
+                 UpdateContext({accout_id : 0 });
+                UpdateContext({accout_Type : ""});
+                Set(varshowpupupforaccout,false);
+                ClearCollect(select_accoutType ,seldectAccoutType.Run());
+                Notify("Record Deleted",NotificationType.Information)
+            Text: ="Delete"
+            Visible: =varshowpupupforaccout
+            X: =561
+            Y: =478
+            ZIndex: =25
+

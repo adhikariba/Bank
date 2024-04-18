@@ -1,0 +1,87 @@
+HOME As screen:
+
+    Container3 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =87
+        Width: =1365
+        ZIndex: =1
+
+        Label1 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            DisplayMode: =DisplayMode.View
+            Height: =45
+            Size: =25
+            Text: ="Bank"
+            Width: =265
+            X: =560
+            Y: =28
+            ZIndex: =1
+
+        user_1 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: =Today()
+            Width: =300
+            X: =1063
+            Y: =44
+            ZIndex: =2
+
+    user As label:
+        Align: =Align.Right
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Text: =Concatenate("Welcome","  "  , User().FullName)
+        Width: =300
+        X: =1065
+        ZIndex: =8
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =681
+        Width: =1366
+        Y: =87
+        ZIndex: =9
+
+        Label9 As label:
+            Align: =Align.Center
+            BorderThickness: =10
+            Fill: =RGBA(130, 141, 158, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =76
+            OnSelect: =Navigate(Member)
+            Size: =30
+            Text: ="BankMember"
+            Width: =368
+            X: =88
+            Y: =16
+            ZIndex: =1
+
+        Label9_1 As label:
+            Align: =Align.Center
+            BorderThickness: =10
+            Fill: =RGBA(130, 141, 158, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =76
+            OnSelect: =Navigate(AccoutType)
+            Size: =30
+            Text: ="Account Type"
+            Width: =368
+            X: =511
+            Y: =16
+            ZIndex: =2
+
+        Label9_2 As label:
+            Align: =Align.Center
+            BorderThickness: =10
+            Fill: =RGBA(130, 141, 158, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =76
+            OnSelect: =Navigate(Account_open)
+            Size: =30
+            Text: ="Account open"
+            Width: =368
+            X: =935
+            Y: =16
+            ZIndex: =3
+

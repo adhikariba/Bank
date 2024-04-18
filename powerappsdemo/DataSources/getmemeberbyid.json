@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "3913c0f7-addb-4a10-8fe9-d41546dd206f",
+    "Name": "getmemeberbyid",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "cef08a17-8dfd-ee11-a1fe-000d3a58fc8d"
+  }
+]

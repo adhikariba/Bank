@@ -1,0 +1,20 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-28T20:39:44.7630000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "type_id": "type_id",
+      "type_name": "type_name"
+    },
+    "DatasetName": "DESKTOP-0K27CT6%5cSQLEXPRESS,Management",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "AccountType",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

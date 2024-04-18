@@ -1,0 +1,238 @@
+"'VIEW DETAIL' As screen":
+
+    Container3_2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =87
+        Width: =1365
+        ZIndex: =1
+
+        Label1_2 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            DisplayMode: =DisplayMode.View
+            Height: =45
+            Size: =25
+            Text: ="Bank"
+            Width: =265
+            X: =560
+            Y: =28
+            ZIndex: =1
+
+    Container2_1 As groupContainer.verticalAutoLayoutContainer:
+        Height: =681
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+        LayoutMode: =LayoutMode.Auto
+        Width: =
+        Y: =87
+        ZIndex: =2
+
+    BankMemberDetailForm As formViewer:
+        DataSource: =BankMember
+        Height: =100
+        Item: =Gallery4.Selected
+        Width: =1365
+        Y: =87
+        ZIndex: =3
+
+        member_id_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="member_id"
+            Default: =ThisItem.member_id
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@BankMember],DataSourceInfo.DisplayName,"member_id")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =455
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+        member_name_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="member_name"
+            Default: =ThisItem.member_name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@BankMember],DataSourceInfo.DisplayName,"member_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =455
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+        member_phone_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="member_phone"
+            Default: =ThisItem.member_phone
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@BankMember],DataSourceInfo.DisplayName,"member_phone")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =455
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                ZIndex: =2
+
+    Icon3 As icon.Home:
+        Height: =45
+        Icon: =Icon.Home
+        OnSelect: =Back()
+        Y: =11
+        ZIndex: =4
+
+    FormViewer1 As formViewer:
+        DataSource: =AccountType
+        Height: =129
+        Item: =Gal_Account_Type.Selected
+        Width: =1366
+        Y: =197
+        ZIndex: =5
+
+        type_id_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="type_id"
+            Default: =ThisItem.type_id
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@AccountType],DataSourceInfo.DisplayName,"type_id")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =455
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey8 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue8 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                ZIndex: =2
+
+        type_name_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="type_name"
+            Default: =ThisItem.type_name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@AccountType],DataSourceInfo.DisplayName,"type_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =455
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey9 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue9 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey9.Y + DataCardKey9.Height + 5
+                ZIndex: =2
+

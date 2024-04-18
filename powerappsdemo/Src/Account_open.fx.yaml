@@ -1,0 +1,168 @@
+Account_open As screen:
+    Fill: =RGBA(237, 237, 237, 1)
+    OnVisible: |+
+        =UpdateContext({member_id : 0 });
+        UpdateContext({accout_Type : ""});
+        
+        
+        
+
+    Container3_9 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =87
+        Width: =1365
+        ZIndex: =1
+
+        Label1_9 As label:
+            Align: =Align.Center
+            DisplayMode: =DisplayMode.View
+            FontWeight: =FontWeight.Bold
+            Height: =79
+            Size: =25
+            Text: ="Acoount open form"
+            Width: =455
+            X: =416
+            Y: =8
+            ZIndex: =1
+
+        user_16 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: =Today()
+            Width: =300
+            X: =1005
+            Y: =32
+            ZIndex: =2
+
+        Icon4 As icon.Home:
+            Icon: =Icon.Home
+            OnSelect: =Navigate(HOME)
+            Width: =49
+            X: =15
+            Y: =8
+            ZIndex: =3
+
+    user_17 As label:
+        Align: =Align.Right
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Text: =Concatenate("Welcome","  "  , User().FullName)
+        Width: =300
+        X: =1002
+        ZIndex: =8
+
+    Label5 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =45
+        Size: =15
+        Text: ="Member_Id"
+        Width: =205
+        X: =40
+        Y: =132
+        ZIndex: =9
+
+    Dropdown_member_id As dropdown:
+        Height: =43
+        Items: =select_member
+        OnChange: =ClearCollect(memeber_detail, getmemeberbyid.Run(Dropdown_member_id.Selected.member_id));
+        Width: =360
+        X: =228
+        Y: =134
+        ZIndex: =10
+
+    DataTable3 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        HeadingSize: =16
+        Height: =124
+        Items: =memeber_detail
+        Size: =20
+        Width: =998
+        X: =84
+        Y: =196
+        ZIndex: =11
+
+        member_id_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="member_id"
+            FieldName: ="member_id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.member_id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        member_fullname_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="member_fullname"
+            FieldName: ="member_fullname"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.member_fullname
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        email_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="email"
+            FieldName: ="email"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.email
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+    Label10 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =16
+        Text: ="Accout_Type"
+        Width: =188
+        X: =48
+        Y: =320
+        ZIndex: =12
+
+    Dropdown_account_type As dropdown:
+        Height: =43
+        Items: =select_accoutType
+        OnChange: =
+        Width: =360
+        X: =228
+        Y: =320
+        ZIndex: =13
+
+    Button13 As button:
+        Height: =47
+        OnSelect: |-
+            =accountopen.Run(Dropdown_member_id.Selected.member_id,Dropdown_account_type.Selected.Account_id);
+            Notify("Record Saved!!",NotificationType.Information)
+        Text: ="Create Account"
+        Width: =284
+        X: =84
+        Y: =435
+        ZIndex: =14
+
+    Button14 As button:
+        OnSelect: |
+            =UpdateContext({member_id : 0 });
+            UpdateContext({accout_Type : ""});
+        Text: ="Reset"
+        X: =472
+        Y: =442
+        ZIndex: =15
+

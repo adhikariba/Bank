@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "079182b3-00e4-4bb3-ba6f-c6ae9728f246",
+    "Name": "accountopen",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "b726a4b8-89fd-ee11-a1fe-000d3a58fc8d"
+  }
+]

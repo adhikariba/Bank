@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "82be343b-dcd3-48f7-ba84-4087a889d5a3",
+    "Name": "AddUpdateAccountType",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "0d2c2c8d-f7fc-ee11-a1fe-000d3a58fc8d"
+  }
+]

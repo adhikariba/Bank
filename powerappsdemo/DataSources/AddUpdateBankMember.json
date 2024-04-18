@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "42394ed4-f150-4f71-bad2-7308875d2e45",
+    "Name": "AddUpdateBankMember",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "a55b236c-e3fc-ee11-a1fe-000d3a58fc8d"
+  }
+]

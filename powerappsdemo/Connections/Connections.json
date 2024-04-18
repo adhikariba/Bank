@@ -1,0 +1,584 @@
+{
+  "08b8b71d-d51f-4036-977e-9e990287a8eb": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "gatewayObjectIdHint": "9b1f3efb-2ab4-46b4-ad5c-fd41fc2597fc",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1683/1.0.1683.3686/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/shared-sql-19abc05b-0fbb-4cd4-b52f-e19e5a0706e3",
+      "xrmConnectionReferenceLogicalName": "new_sharedsql_289dd"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "a2b6811c-eba4-4c36-9b4c-13a3b5d5c061",
+      "2d9db43b-f097-4d3e-a3e6-393b88306e05",
+      "e7700868-5296-4a9e-bd09-a6b0a3d845d8",
+      "b6a93753-5f5a-43df-b1d8-3992803b028a",
+      "ebfe978d-38b5-48c1-a21c-468a7ed3d020"
+    ],
+    "endpoints": [
+      "DESKTOP-0K27CT6\\SQLEXPRESS,Bank"
+    ],
+    "id": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+  },
+  "16a138b8-c4e1-4cd7-bc69-d71d1a308863": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "gatewayObjectIdHint": "9b1f3efb-2ab4-46b4-ad5c-fd41fc2597fc",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1683/1.0.1683.3686/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/shared-sql-3bdbd990-cee3-464a-8fb1-2b39c417b924",
+      "xrmConnectionReferenceLogicalName": "new_sharedsql_68513"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "4d60391d-fe80-4ed4-beed-bf43fc1601a8",
+      "b5e9d4a7-12db-49ef-bd6d-0f1a8f63d903",
+      "9c63679e-21d9-439b-8369-774ca66e28b3",
+      "1742e948-fa7d-4aae-a1bc-67494e150cd8",
+      "1ddfebfd-1c73-4cbf-85fa-ece62ac021e4"
+    ],
+    "endpoints": [
+      "DESKTOP-0K27CT6\\SQLEXPRESS,Bank"
+    ],
+    "id": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+  },
+  "1742e948-fa7d-4aae-a1bc-67494e150cd8": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "16a138b8-c4e1-4cd7-bc69-d71d1a308863": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "deleteBankMember"
+        },
+        "workflowEntityId": {
+          "value": "c5cc50ab-e6fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "d5f7d355-ecfd-261d-3b47-727cb6e3ebd3"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+        },
+        "workflowDisplayName": {
+          "value": "deleteBankMember"
+        },
+        "workflowEntityId": {
+          "value": "c5cc50ab-e6fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "d5f7d355-ecfd-261d-3b47-727cb6e3ebd3"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "deleteBankMember"
+    ],
+    "dependencies": {
+      "shared_sql_1": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+    },
+    "dependents": [],
+    "id": "1742e948-fa7d-4aae-a1bc-67494e150cd8"
+  },
+  "1ddfebfd-1c73-4cbf-85fa-ece62ac021e4": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "16a138b8-c4e1-4cd7-bc69-d71d1a308863": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "selectMember"
+        },
+        "workflowEntityId": {
+          "value": "24ebeeff-dbfc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "4d210cec-9d73-dcbf-f30f-d71f95aa1659"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+        },
+        "workflowDisplayName": {
+          "value": "selectMember"
+        },
+        "workflowEntityId": {
+          "value": "24ebeeff-dbfc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "4d210cec-9d73-dcbf-f30f-d71f95aa1659"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "selectMember"
+    ],
+    "dependencies": {
+      "shared_sql_1": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+    },
+    "dependents": [],
+    "id": "1ddfebfd-1c73-4cbf-85fa-ece62ac021e4"
+  },
+  "2d9db43b-f097-4d3e-a3e6-393b88306e05": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "08b8b71d-d51f-4036-977e-9e990287a8eb": {
+          "value": "shared_sql_3"
+        },
+        "workflowDisplayName": {
+          "value": "listOfMemberDetail"
+        },
+        "workflowEntityId": {
+          "value": "0bf122bd-81fd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "540a6c2c-d9f7-9e16-817c-cfd64870a4ac"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_3": {
+          "value": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+        },
+        "workflowDisplayName": {
+          "value": "listOfMemberDetail"
+        },
+        "workflowEntityId": {
+          "value": "0bf122bd-81fd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "540a6c2c-d9f7-9e16-817c-cfd64870a4ac"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "listOfMemberDetail"
+    ],
+    "dependencies": {
+      "shared_sql_3": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+    },
+    "dependents": [],
+    "id": "2d9db43b-f097-4d3e-a3e6-393b88306e05"
+  },
+  "4d60391d-fe80-4ed4-beed-bf43fc1601a8": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "16a138b8-c4e1-4cd7-bc69-d71d1a308863": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "deleteAccoutType"
+        },
+        "workflowEntityId": {
+          "value": "9a1f3e2c-f8fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "fef27dc3-5261-bfe0-5bf9-640addd1df8f"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+        },
+        "workflowDisplayName": {
+          "value": "deleteAccoutType"
+        },
+        "workflowEntityId": {
+          "value": "9a1f3e2c-f8fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "fef27dc3-5261-bfe0-5bf9-640addd1df8f"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "deleteAccoutType"
+    ],
+    "dependencies": {
+      "shared_sql_1": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+    },
+    "dependents": [],
+    "id": "4d60391d-fe80-4ed4-beed-bf43fc1601a8"
+  },
+  "9c63679e-21d9-439b-8369-774ca66e28b3": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "16a138b8-c4e1-4cd7-bc69-d71d1a308863": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "seldectAccoutType"
+        },
+        "workflowEntityId": {
+          "value": "4e56cb1b-f6fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "e018dfd2-08b4-c6cd-3e9c-4745b889aaf2"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+        },
+        "workflowDisplayName": {
+          "value": "seldectAccoutType"
+        },
+        "workflowEntityId": {
+          "value": "4e56cb1b-f6fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "e018dfd2-08b4-c6cd-3e9c-4745b889aaf2"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "seldectAccoutType"
+    ],
+    "dependencies": {
+      "shared_sql_1": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+    },
+    "dependents": [],
+    "id": "9c63679e-21d9-439b-8369-774ca66e28b3"
+  },
+  "a2b6811c-eba4-4c36-9b4c-13a3b5d5c061": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "08b8b71d-d51f-4036-977e-9e990287a8eb": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "AddUpdateBankMember"
+        },
+        "workflowEntityId": {
+          "value": "a55b236c-e3fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "a038c647-7134-ca31-8186-befb623d9ce7"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+        },
+        "workflowDisplayName": {
+          "value": "AddUpdateBankMember"
+        },
+        "workflowEntityId": {
+          "value": "a55b236c-e3fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "a038c647-7134-ca31-8186-befb623d9ce7"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "AddUpdateBankMember"
+    ],
+    "dependencies": {
+      "shared_sql_1": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+    },
+    "dependents": [],
+    "id": "a2b6811c-eba4-4c36-9b4c-13a3b5d5c061"
+  },
+  "b5e9d4a7-12db-49ef-bd6d-0f1a8f63d903": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "16a138b8-c4e1-4cd7-bc69-d71d1a308863": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "AddUpdateAccountType"
+        },
+        "workflowEntityId": {
+          "value": "0d2c2c8d-f7fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "015f333b-54fe-b4f2-4281-9c92be320003"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+        },
+        "workflowDisplayName": {
+          "value": "AddUpdateAccountType"
+        },
+        "workflowEntityId": {
+          "value": "0d2c2c8d-f7fc-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "015f333b-54fe-b4f2-4281-9c92be320003"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "AddUpdateAccountType"
+    ],
+    "dependencies": {
+      "shared_sql_1": "16a138b8-c4e1-4cd7-bc69-d71d1a308863"
+    },
+    "dependents": [],
+    "id": "b5e9d4a7-12db-49ef-bd6d-0f1a8f63d903"
+  },
+  "b6a93753-5f5a-43df-b1d8-3992803b028a": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "08b8b71d-d51f-4036-977e-9e990287a8eb": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "accountopen"
+        },
+        "workflowEntityId": {
+          "value": "b726a4b8-89fd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "e9109600-06b3-4781-e2c6-91e1952df9f7"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+        },
+        "workflowDisplayName": {
+          "value": "accountopen"
+        },
+        "workflowEntityId": {
+          "value": "b726a4b8-89fd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "e9109600-06b3-4781-e2c6-91e1952df9f7"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "accountopen"
+    ],
+    "dependencies": {
+      "shared_sql_1": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+    },
+    "dependents": [],
+    "id": "b6a93753-5f5a-43df-b1d8-3992803b028a"
+  },
+  "e7700868-5296-4a9e-bd09-a6b0a3d845d8": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "08b8b71d-d51f-4036-977e-9e990287a8eb": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "getmemeberbyid"
+        },
+        "workflowEntityId": {
+          "value": "cef08a17-8dfd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "ea345473-421f-a142-d6f9-b489dce24eee"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+        },
+        "workflowDisplayName": {
+          "value": "getmemeberbyid"
+        },
+        "workflowEntityId": {
+          "value": "cef08a17-8dfd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "ea345473-421f-a142-d6f9-b489dce24eee"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "getmemeberbyid"
+    ],
+    "dependencies": {
+      "shared_sql_1": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+    },
+    "dependents": [],
+    "id": "e7700868-5296-4a9e-bd09-a6b0a3d845d8"
+  },
+  "ebfe978d-38b5-48c1-a21c-468a7ed3d020": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "08b8b71d-d51f-4036-977e-9e990287a8eb": {
+          "value": "shared_sql_1"
+        },
+        "workflowDisplayName": {
+          "value": "listofAccoutDetail"
+        },
+        "workflowEntityId": {
+          "value": "983db929-98fd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "c4c74657-ac8b-5dd5-fe7a-5fb74ad4d719"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sql_1": {
+          "value": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+        },
+        "workflowDisplayName": {
+          "value": "listofAccoutDetail"
+        },
+        "workflowEntityId": {
+          "value": "983db929-98fd-ee11-a1fe-000d3a58fc8d"
+        },
+        "workflowName": {
+          "value": "c4c74657-ac8b-5dd5-fe7a-5fb74ad4d719"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "listofAccoutDetail"
+    ],
+    "dependencies": {
+      "shared_sql_1": "08b8b71d-d51f-4036-977e-9e990287a8eb"
+    },
+    "dependents": [],
+    "id": "ebfe978d-38b5-48c1-a21c-468a7ed3d020"
+  },
+  "ec2cee82-1840-4406-932a-767ed192ab11": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "gatewayObjectIdHint": "9b1f3efb-2ab4-46b4-ad5c-fd41fc2597fc",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1683/1.0.1683.3686/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/08852de8634c444d9d415e9c180b8d5d",
+      "xrmConnectionReferenceLogicalName": "bhu_08852de8634c444d9d415e9c180b8d5d"
+    },
+    "datasets": {
+      "DESKTOP-0K27CT6%5cSQLEXPRESS,Management": {
+        "dataSources": {
+          "AccountType": {
+            "tableName": "[dbo].[AccountType]"
+          },
+          "BankMember": {
+            "tableName": "[dbo].[BankMember]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "BankMember",
+      "AccountType"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "endpoints": [
+      "DESKTOP-0K27CT6%5cSQLEXPRESS,Management"
+    ],
+    "id": "ec2cee82-1840-4406-932a-767ed192ab11"
+  }
+}

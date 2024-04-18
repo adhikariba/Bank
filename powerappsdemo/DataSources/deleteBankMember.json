@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "001f358f-cb3d-46b6-875c-dfaa5683b376",
+    "Name": "deleteBankMember",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "c5cc50ab-e6fc-ee11-a1fe-000d3a58fc8d"
+  }
+]

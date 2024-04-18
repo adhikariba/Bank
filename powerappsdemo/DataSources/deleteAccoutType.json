@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "f9cbdbfe-5c92-4b5f-bd4d-387853747231",
+    "Name": "deleteAccoutType",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "9a1f3e2c-f8fc-ee11-a1fe-000d3a58fc8d"
+  }
+]

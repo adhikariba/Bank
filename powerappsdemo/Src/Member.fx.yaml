@@ -1,0 +1,284 @@
+Member As screen:
+    Fill: =RGBA(237, 237, 237, 1)
+    OnVisible: |+
+        =UpdateContext({member_id : 0 });
+        UpdateContext({member_fullName : ""});
+        UpdateContext({member_email:""});
+        ClearCollect(select_member,selectMember.Run());
+        
+
+    Container3_4 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =87
+        Width: =1366
+        ZIndex: =1
+
+        Label1_4 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            DisplayMode: =DisplayMode.View
+            Height: =45
+            Size: =25
+            Text: ="Member"
+            Width: =265
+            X: =560
+            Y: =28
+            ZIndex: =1
+
+        user_6 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Size: =15
+            Text: =Today()
+            Width: =300
+            X: =1014
+            Y: =41
+            ZIndex: =2
+
+        Icon14 As icon.Home:
+            Height: =52
+            Icon: =Icon.Home
+            OnSelect: =Navigate(HOME)
+            Width: =54
+            Y: =16
+            ZIndex: =3
+
+    "Gallery_selectMeber As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =647
+        Items: =select_member
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: |-
+            =UpdateContext({member_id:ThisItem.member_id});
+            UpdateContext({member_fullName:ThisItem.member_fullname});
+            UpdateContext({member_email:ThisItem.email});
+        TemplatePadding: =0
+        TemplateSize: =116
+        Y: =121
+        ZIndex: =1
+
+        Title3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.member_id
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle3.Size*1.8 + 2 + Body1.Size*1.8)) / 2
+            ZIndex: =1
+
+        Subtitle3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.email
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title3.Width
+            X: =Title3.X
+            Y: =Title3.Y + Title3.Height
+            ZIndex: =2
+
+        Body1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.member_fullname
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title3.Width
+            X: =Title3.X
+            Y: =Subtitle3.Y + Subtitle3.Height
+            ZIndex: =3
+
+        NextArrow3 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =
+                Navigate(AccoutDetail, Transition.None,{member_id:ThisItem.member_id});
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator3 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle3 As rectangle:
+            Height: =Parent.TemplateHeight - Separator3.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    user_7 As label:
+        Align: =Align.Right
+        FontWeight: =FontWeight.Bold
+        Height: =54
+        Size: =15
+        Text: =Concatenate("Welcome","  "  , User().FullName)
+        Width: =290
+        X: =1017
+        ZIndex: =8
+
+    TextInput_member_id As text:
+        Default: =member_id
+        Format: =TextFormat.Number
+        X: =820
+        Y: =181
+        ZIndex: =11
+
+    TextInput_member_name As text:
+        Default: =member_fullName
+        X: =820
+        Y: =248
+        ZIndex: =12
+
+    TextInput_member_email As text:
+        Default: =member_email
+        X: =820
+        Y: =316
+        ZIndex: =13
+
+    Button_ADD_Update As button:
+        Fill: =RGBA(54, 176, 75, 1)
+        OnSelect: |-
+            =AddUpdateBankMember.Run(TextInput_member_id.Text,TextInput_member_name.Text,TextInput_member_email.Text);
+            ClearCollect(select_member ,selectMember.Run());
+        Text: ="ADD/Update"
+        X: =772
+        Y: =444
+        ZIndex: =14
+
+    Button_Reset As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        OnSelect: |-
+            =UpdateContext({member_id : 0 });
+            UpdateContext({member_fullName : ""});
+            UpdateContext({member_email:""});
+        Text: ="Reset"
+        X: =1121
+        Y: =444
+        ZIndex: =15
+
+    Button_Delete As button:
+        Fill: =RGBA(221, 79, 14, 1)
+        OnSelect: |-
+            =Set(varshowpupUpforMember, true);
+             
+        Text: ="Delete"
+        X: =948
+        Y: =444
+        ZIndex: =16
+
+    Icon12 As icon.Reload:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        Height: =40
+        Icon: =Icon.Reload
+        OnSelect: =ClearCollect(select_member ,selectMember.Run());
+        Width: =45
+        X: =1321
+        Y: =23
+        ZIndex: =17
+
+    popUpgroup As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Rectangle As rectangle:
+            Fill: =RGBA(56, 96, 178, .5)
+            Height: =681
+            Visible: =varshowpupUpforMember
+            Width: =1366
+            Y: =87
+            ZIndex: =18
+
+        Rectangle9 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =377
+            Visible: =varshowpupUpforMember
+            Width: =801
+            X: =351
+            Y: =221
+            ZIndex: =19
+
+        Label3 As label:
+            Align: =Align.Center
+            Color: =RGBA(221, 79, 14, 1)
+            DisabledColor: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =68
+            Size: =20
+            Text: =" Are you sure you want to delete this record"
+            Visible: =varshowpupUpforMember
+            Width: =801
+            X: =351
+            Y: =332
+            ZIndex: =20
+
+        Label3_1 As label:
+            Align: =Align.Center
+            Fill: =RGBA(238, 204, 204, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =68
+            Size: =16
+            Text: ="Delete Record"
+            Visible: =varshowpupUpforMember
+            Width: =801
+            X: =351
+            Y: =221
+            ZIndex: =21
+
+        Button9 As button:
+            OnSelect: |
+                =Set(varshowpupUpforMember, false);
+            Text: ="cancle"
+            Visible: =varshowpupUpforMember
+            X: =842
+            Y: =484
+            ZIndex: =22
+
+        Button10 As button:
+            Fill: =RGBA(250, 155, 112, 1)
+            OnSelect: |-
+                = If(member_id > 0,    deleteBankMember.Run(member_id));
+                 UpdateContext({member_id : 0 });
+                UpdateContext({member_fullName : ""});
+                UpdateContext({member_email:""});
+                ClearCollect(select_member ,selectMember.Run());
+                Set(varshowpupUpforMember,false);
+                Notify("Record Deleted",NotificationType.Information)
+            Text: ="Delete"
+            Visible: =varshowpupUpforMember
+            X: =563
+            Y: =484
+            ZIndex: =23
+
