@@ -85,3 +85,9 @@ HOME As screen:
             Y: =16
             ZIndex: =3
 
+        Button3 As button:
+            Text: ="Button"
+            X: =224
+            Y: =312
+            ZIndex: =4
+
